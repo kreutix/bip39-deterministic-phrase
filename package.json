@@ -1,0 +1,16 @@
+{
+  "name": "bip39-deterministic-phrase",
+  "version": "0.0.1",
+  "description": "Generates a secure deterministic mnemonic phrase out of a given number of strings. Each string will be concatenated with the previous hash and will run 100.000 rounds of sha-256. The last hash representes the entropy for the bip39 mnemonic phrase.",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js"
+  },
+  "dependencies": {
+    "bip39": "^2.5.0",
+    "inquirer": "^6.2.2"
+  },
+  "devDependencies": {},
+  "author": "info@kreutix.de",
+  "license": "MIT"
+}
