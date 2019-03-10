@@ -41,7 +41,7 @@ $ npm start  # or $ node index.js
 
 bip39-deterministic-phrase v0.0.1 (alpha - please do not use in production yet)
 
-Generates a secure deterministic mnemonic phrase out of a given number of strings. Each string will be concatenated with the previous hash and will run 100.000 rounds of sha-256. The last hash representes the entropy for the bip39 mnemonic phrase.
+Generates a secure deterministic mnemonic phrase out of a given number of strings. Each string will be concatenated with the previous hash and will run 100.000 rounds of sha-256. The last hash represents the entropy for the bip39 mnemonic phrase.
 
 ? Please enter your 1. word/sentence: Do you think this is a secure way to generate a good mnemonic phrase?
 DEBUG Do you think this is a secure way to generate a good mnemonic phrase? => 6aa04dc46e2cf601beb05ac979e299bfa9655faf27f5a3d7c2511f9b3c0008a5
