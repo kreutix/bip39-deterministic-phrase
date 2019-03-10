@@ -17,9 +17,26 @@ The generation of the mnemonic phrase should be done on an offline PC, ideally b
 ## Example (with DEBUG output)
 
 ```
-$ npm start
+$ git clone https://github.com/kreutix/bip39-deterministic-phrase.git
+Cloning into 'bip39-deterministic-phrase'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 12 (delta 2), reused 4 (delta 0), pack-reused 0
+Unpacking objects: 100% (12/12), done.
 
-> bip39-deterministic-phrase@0.0.1 start /Users/stefankreuter/dev/bip39
+$ cd bip39-deterministic-phrase
+
+$ npm install
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN bip39-deterministic-phrase@0.0.1 No repository field.
+
+added 48 packages from 37 contributors and audited 122 packages in 8.397s
+found 0 vulnerabilities
+
+$ npm start  # or $ node index.js
+
+> bip39-deterministic-phrase@0.0.1 start
 > node index.js
 
 bip39-deterministic-phrase v0.0.1 (alpha - please do not use in production yet)
