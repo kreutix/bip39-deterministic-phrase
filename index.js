@@ -36,7 +36,7 @@ const sha256rounds = (str, rounds) => {
 
 	console.log('bip39-deterministic-phrase v0.0.1 (alpha - please do not use in production yet)')
 	console.log()
-	console.log('Generates a secure deterministic mnemonic phrase out of a given number of strings. Each string will be concatenated with the previous hash and will run 100.000 rounds of sha-256. The last hash representes the entropy for the bip39 mnemonic phrase.')
+	console.log('Generates a secure deterministic mnemonic phrase out of a given number of strings. Each string will be concatenated with the previous hash and will run 100.000 rounds of sha-256. The last hash represents the entropy for the bip39 mnemonic phrase.')
 	console.log()
 
 	let hash = ''
