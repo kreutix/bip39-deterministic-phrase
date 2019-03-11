@@ -4,6 +4,8 @@ Generates a secure deterministic mnemonic phrase out of a given number of string
 
 **CAUTION: Please do NOT use this software in production yet!** (It is currently in alpha state)
 
+**UPDATE**: As you can read in the comment section of this [reddit](https://www.reddit.com/r/ledgerwallet/comments/azhkc6/create_your_own_secure_mnemonic_phrase/) and might have thought already, it's not a good idea to generate a deterministic phrase. As a result of this discussion I will update my concept. I want to use my deterministic phrase to encrypt the original random phrase (word by word via XOR), so it's possible to keep this encrypted phrase on multiple places (even in your wallet or on your body) and still be sure nobody can access your keys, even if he has your encrypted phrase. Because the phrase is encrypted with XOR it's impossible to brute force it, because every brute force key will generate a valid phrase (ignoring the checksum). And even with checksum, the brute force attack would generate all valid phrases with the right checksum.
+
 ## Purpose 
 
 The purpose of this tool is to generate a secure mnemonic phrase out of pieces of information which are only known to the creator of the mnemonic phrase. A possible sources of information could be a specific book. One could for example use the first 20 words out of the first 6 chapters of a given book. For extra security one could add a simple to remember but secret word, on the beginning, the end or in between each word. Another strategy could be the usage of a random set of easy to remember sentences. IMHO you should use at least 3 sentences if you use this strategy.
