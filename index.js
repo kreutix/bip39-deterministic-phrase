@@ -11,7 +11,7 @@ const spellIndex = (i) => {
 const nextLine = async(i) => {
   	let answers = await inquirer.prompt({
 		name: 'line',
-		type: 'input',
+		type: 'password',
 		message: 'Please enter your ' + spellIndex(i) + ' word/sentence' + (i > 0 ? ' or hit enter to finish input' : '') + ':'
 	})
 	return answers.line
@@ -47,7 +47,7 @@ const sha256rounds = (str, rounds) => {
 			break
 		}
 		let newHash = sha256rounds(hash + line, 100000)
-		console.debug('DEBUG', hash + line, '=>', newHash)
+		console.debug('DEBUG', hash , ' + $line =>', newHash)
 		hash = newHash
 	}
 
@@ -55,6 +55,9 @@ const sha256rounds = (str, rounds) => {
 	// uses HEX strings for entropy
 	console.debug('DEBUG', 'entropy:', hash)
 	var mnemonic = bip39.entropyToMnemonic(hash)
+	console.log('')
+	console.log('Please do NOT use this phrase as your mnemonic phrase! You should only use it as an encryption key for your real mnemonic phrase!')
+	console.log('')
 	console.log(mnemonic)
 
 })();
