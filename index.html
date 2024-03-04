@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mnemonic Phrase Generator</title>
+    <script src="./sjcl.js"></script>
+    <script src="./jsbip39.js"></script>
+    <script src="./wordlist_english.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { margin: 3px 0; display: flex;}
+        .container textarea { width: 100%; height: 150px; }
+    </style>
+</head>
+<body>
+    <h1>Mnemonic Phrase Generator</h1>
+    <p>Generates a secure deterministic mnemonic phrase from your input.</p>
+    <div class="container">
+        <textarea id="userInput" placeholder="Enter your words/sentences"></textarea>
+    </div>
+    
+    <button onclick="generatePhrase()">Generate</button>
+
+    <p id="mnemonic"></p>
+
+    <script>
+        const bip39 = new Mnemonic("english");
+
+        function hexToBytes(hex) {
+            let bytes = [];
+            for (let i = 0; i < hex.length; i += 2) {
+                bytes.push(parseInt(hex.substr(i, 2), 16));
+            }
+            return bytes;
+        }
+
+        async function sha256(str, returnString = false) {
+            const result = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+            return Array.prototype.map.call(new Uint8Array(result), x => ('00' + x.toString(16)).slice(-2)).join('');
+        }
+
+        async function sha256rounds(str, rounds) {
+            let hash = await sha256('BITCOIN IS KING');
+            for (let i = 0; i < rounds; i++) {
+                hash = await sha256(hash + str + hash + str + hash);
+            }
+            return hash;
+        }
+
+        async function generatePhrase() {
+            const rounds = 100000; // Adjust rounds as needed
+            let hash = '';
+            const userInput = document.getElementById('userInput').value;
+            for (let line of userInput.split('\n').filter(line => line.trim() !== '')) {
+                console.log(hash + line.trim());
+                hash = await sha256rounds(hash + line.trim(), rounds);
+                console.log(hash);
+            }
+            const mnemonic = bip39.toMnemonic(hexToBytes(hash));
+            document.getElementById('mnemonic').textContent = mnemonic;
+        }
+    </script>
+</body>
+</html>
