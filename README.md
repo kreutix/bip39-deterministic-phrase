@@ -62,3 +62,17 @@ DEBUG entropy: 7fcfc2c6a6779fb2918a52d7e21cd513a1300cf9700a52b160d78a644b181668
 
 lemon lawn random erupt ketchup sun economy engage subject axis crystal chef basic all total access famous mention curious below dwarf metal fluid auto
 ```
+
+## XOR Example
+
+If you use the above example and add the following phase as xor input you will get the following xor result.
+
+XOR Input
+```
+bind mammal close report boost target length use sponsor mouse problem excess unusual crack away old glimpse purpose adjust excess dry auction erosion rocket
+```
+
+XOR Result 
+```
+hat weather old wheel gate again shiver planet airport leopard owner hawk wool dash volcano opera cover century cushion fog alpha load bench present
+```
