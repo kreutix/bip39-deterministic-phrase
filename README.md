@@ -1,6 +1,6 @@
 # bip39-deterministic-phrase
 
-Generates a secure deterministic mnemonic phrase out of a given number of strings. Each string will be concatenated with the previous hash and will run 100.000 rounds of sha-256. The last hash represents the entropy for the bip39 mnemonic phrase.
+Generates a deterministic mnemonic phrase out of a given number of strings. Each string will be concatenated with the previous hash and will run 100.000 rounds of sha-256. The last hash represents the entropy for the bip39 mnemonic phrase.
 
 **CAUTION: Please do NOT use this software in production yet!** (It is currently in alpha state)
 
@@ -8,7 +8,7 @@ Generates a secure deterministic mnemonic phrase out of a given number of string
 
 ## Purpose 
 
-The purpose of this tool is to generate a secure mnemonic phrase out of pieces of information which are only known to the creator of the mnemonic phrase. A possible sources of information could be a specific book. One could for example use the first 20 words out of the first 6 chapters of a given book. For extra security one could add a simple to remember but secret word, on the beginning, the end or in between each word. Another strategy could be the usage of a random set of easy to remember sentences. IMHO you should use at least 3 sentences if you use this strategy.
+The purpose of this tool is to generate a mnemonic phrase out of pieces of information which are only known to the creator of the mnemonic phrase. A possible sources of information could be a specific book. One could for example use the first 20 words out of the first 6 chapters of a given book. For extra security one could add a simple to remember but secret word, on the beginning, the end or in between each word. Another strategy could be the usage of a random set of easy to remember sentences. IMHO you should use at least 3 sentences if you use this strategy.
 
 The usage of this tool is only secure if the mnemonic phrase creator uses his own secret strategy. For many people (including me) it's probably easier to remember a strategy instead of 24 ramdomly generated words. As an extra backup the 24 generated words should still be written somewhere offline.
 
